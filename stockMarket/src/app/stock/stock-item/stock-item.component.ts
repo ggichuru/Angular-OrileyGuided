@@ -11,6 +11,7 @@ export class StockItemComponent implements OnInit {
   price: number;
   previousPrice: number;
   positiveChange: boolean;
+  favorite: boolean;
 
   constructor() { }
 
@@ -20,6 +21,12 @@ export class StockItemComponent implements OnInit {
     this.previousPrice = 80;
     this.price = 85;
     this.positiveChange = this.price >= this.previousPrice;
+    this.favorite = false;
+  }
+
+  toogleFavorite(event) {
+    console.log('We are toogling a favorite stock!', event);
+    this.favorite = !this.favorite;
   }
 
 }

@@ -7,4 +7,9 @@
         
         $ {{price}}
     </div>
+    <button
+        (click)="toogleFavorite($event)"
+        [disabled]="favorite"
+        [class]="favorite ? 'isfavorite' : ' notfavorite'">
+        Add to favorites</button>
 </div>

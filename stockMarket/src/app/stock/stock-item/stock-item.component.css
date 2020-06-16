@@ -12,3 +12,14 @@
 .negative{
     color: red;
 }
+
+.isfavorite{
+    color: wheat;
+    background-color: black;
+    display: none;
+}
+
+.notfavorite{
+    color: black;
+    background-color: chartreuse;
+}
