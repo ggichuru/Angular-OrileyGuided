@@ -1,0 +1,20 @@
+<div class="prodContainer"
+     [class] = "product.onsale ? 'prodContainer sale': ''"
+     >
+    <div class="image">
+        <img [src] = "product.image" height="100px" width="100px">
+    </div>
+    <div class="name">
+       Name: {{product.name}}
+    </div>
+    <div class="price">
+      Price: Ksh {{product.price}}
+    </div>
+    <div>
+        <button [disabled] = "product.quantityInCart == 0"
+                (click) = "decreamentCart()">-</button>
+        <span>Items in cart: {{product.quantityInCart}}</span>
+        <button
+            (click) = "increamentCart()">+</button>
+    </div>
+</div>

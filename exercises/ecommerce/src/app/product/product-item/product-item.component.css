@@ -1,0 +1,10 @@
+.prodContainer{
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    padding: 20px;
+    align-content: center;
+}
+.prodContainer.sale {
+    background-color: lightseagreen;
+  }
