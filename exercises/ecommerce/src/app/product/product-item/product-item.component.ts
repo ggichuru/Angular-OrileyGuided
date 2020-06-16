@@ -31,15 +31,14 @@ export class ProductItemComponent implements OnInit {
       image: 'https://pixabay.com/get/57e4d1414a51a814f6d1867dda35367b1c3ddde75657784b_1920.jpg',
       onsale: true,
       quantityInCart: 0
-    }
-
+    };
   }
 
   increamentCart() {
     this.product.quantityInCart++;
   }
   decreamentCart() {
-    if(this.product.quantityInCart > 0) {
+    if (this.product.quantityInCart > 0) {
       this.product.quantityInCart--;
     }
   }
