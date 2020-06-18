@@ -3,8 +3,8 @@
         {{ stock.name + '('+ stock.code + ')' }}
     </div>
     <div class="price"
-            [class]="stock.isPositiveChange() ? 'positive': 'negative' ">
-        
+            [ngStyle]="stockStyles">
+
         $ {{stock.price}}
     </div>
     <button

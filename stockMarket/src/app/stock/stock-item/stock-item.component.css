@@ -23,3 +23,11 @@
     color: black;
     background-color: chartreuse;
 }
+
+.large-change{
+  font-size: 1.2em;
+}
+
+.small-change{
+  font-size: 0.2em;
+}
