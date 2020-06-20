@@ -1,7 +1,10 @@
 export class Product {
-    name: string;
-    price: number;
-    image: string;
-    onsale: boolean;
-    quantityInCart: number;
+  constructor(
+      public  name: string,
+      public  price: number,
+      public  image: string,
+      public  onsale: boolean,
+      public  quantityInCart: number,
+    ) {
+    }
 }

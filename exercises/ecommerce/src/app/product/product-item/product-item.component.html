@@ -1,19 +1,24 @@
 <div class="prodContainer"
-     [class] = "product.onsale ? 'prodContainer sale': ''"
+     [class] = "products.onsale ? 'prodContainer sale': ''"
      >
     <div class="image">
-        <img [src] = "product.image" height="100px" width="100px">
+      <img [src]="products.image" alt="Image" height="50px" width="50px">
     </div>
     <div class="name">
-       Name: {{product.name}}
+       Name: {{products.name}}
     </div>
     <div class="price">
-      Price: Ksh {{product.price}}
+      Price: Ksh {{products.price}}
     </div>
     <div>
-        <button [disabled] = "product.quantityInCart == 0"
+        <button
+          *ngIf="products.quantityInCart > 0"
+
                 (click) = "decreamentCart()">-</button>
-        <span>Items in cart: {{product.quantityInCart}}</span>
+      <select>
+        <option *ngFor="let qty of quantities; index as i" [value]="qty"> {{qty}}</option>
+      </select>
+        <span>Items in cart: {{products.quantityInCart}}</span>
         <button
             (click) = "increamentCart()">+</button>
     </div>
