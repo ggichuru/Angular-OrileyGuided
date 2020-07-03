@@ -1,34 +1,12 @@
-<div class="stock-container" *ngFor="let stock of stocks; index as i; trackBy: trackStockByCode">
-    <div class="name">
-        {{ stock.name + '('+ stock.code + ')' }}
-    </div>
-    <div class="price"
-            [class]="stock.isPositiveChange() ? 'positive': 'negative'"
-
-    >
-
-        $ {{stock.price}}
-    </div>
-    <button
-        (click)="toogleFavorite($event, i)"
-        *ngIf="!stock.favorite"
-        [class]="stock.favorite ? 'isfavorite' : ' notfavorite'">
-        Add to favorites</button>
-</div>
-
-<div>
-  <h2>Select Country</h2>
-  <select (change)="setDropDownValue($event)">
-    <option value="">Select</option>
-    <option value="IN">IN</option>
-    <option value="US">US</option>
-    <option value="UK">UK</option>
-  </select>
-  <h2>You have selected</h2>
-  <div [ngSwitch]="dropdownvalue">
-  <h3 *ngSwitchCase="'IN'">India</h3>
-  <h3 *ngSwitchCase="'US'">United States of America</h3>
-  <h3 *ngSwitchCase="'UK'">United Kingdom</h3>
-    <h3 *ngSwitchDefault="">You have not selected any country</h3>
+<div class="stock-container">
+  <div class="name">
+    {{stock.name +  '(' + stock.code + ')'}}
   </div>
+  <div
+    class="price"
+    [class]="stock.isPositiveChange() ? 'positive': 'negative'">
+    KSHS {{stock.price}}
+  </div>
+  <button (click)="onToggleFavorite()"
+          *ngIf="!stock.favorite">Add to favorite</button>
 </div>
