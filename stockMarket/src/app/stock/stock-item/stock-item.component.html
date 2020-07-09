@@ -7,6 +7,9 @@
     [class]="stock.isPositiveChange() ? 'positive': 'negative'">
     KSHS {{stock.price}}
   </div>
-  <button (click)="onToggleFavorite()"
-          *ngIf="!stock.favorite">Add to favorite</button>
+<!--  <button (click)="onToggleFavorite()"-->
+<!--          *ngIf="!stock.favorite">Add to favorite</button>-->
+<!--  <button-->
+<!--      (click)="changeStockPrice()">Change Price</button>-->
+  <ng-content></ng-content>
 </div>
