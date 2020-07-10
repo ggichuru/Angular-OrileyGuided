@@ -1,7 +1,15 @@
 <div style="text-align:center;">
   <h1>Welcome to {{ title}} </h1>
-  <app-stock-item [stock]="stockObj" (toggleFavorite)="onToggleFavorite($event)"></app-stock-item>
+<!--  <app-stock-item [stock]="stockObj" (toggleFavorite)="onToggleFavorite($event)"></app-stock-item>-->
+  <app-stock-item [stock]="stockObj" >
+    <button (click)="testMethod()">
+      With Button 1
+    </button>
+  </app-stock-item>
+  <app-stock-item [stock]="stockObj">
+    No buttons for you!
+  </app-stock-item>
 </div>
-<button (click)="changeStockObject()">Change Stock</button>
-<button (click)="changeStockPrice()">Change Price </button>
+<!--<button (click)="changeStockObject()">Change Stock</button>-->
+<!--<button (click)="changeStockPrice()">Change Price </button>-->
 <app-parent></app-parent>
