@@ -26,9 +26,9 @@ describe('Stock Item Component', () => {
 
   it('should create stock component and render stock data', () => {
     const nameEl = fixture.debugElement.query(By.css('.name'));
-    expect(nameEl.nativeElement.textContent).toEqual('Testing Stock (TS) ');
+    expect(nameEl.nativeElement.textContent).toEqual(' Testing Stock(TS) ');
     const priceEl = fixture.debugElement.query(By.css('.price.negative'));
-    expect(priceEl.nativeElement.textContent).toEqual('$ 100');
+    expect(priceEl.nativeElement.textContent).toEqual(' KSHS 100 ');
     const addToFavoriteBtnEl = fixture.debugElement.query(By.css('button'));
     expect(addToFavoriteBtnEl).toBeDefined();
   });
