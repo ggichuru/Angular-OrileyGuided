@@ -27,8 +27,8 @@ export class AppComponent implements OnInit, OnDestroy,
   private counter = 1;
 
   ngOnInit() {
-    this.stockObj = new Stock('Test Set Test - ' + this.counter++ , 'TST', 455, 45);
-    this.stockObj = new Stock('Stock Is A Stock', 'SIAS', 3455, 322);
+    this.stockObj = new Stock('Test Set Test - ' , 'TST', 455, 45);
+
   }
 
   onToggleFavorite(stock: Stock) {

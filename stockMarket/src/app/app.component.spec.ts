@@ -1,31 +1,23 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {AppComponent } from './app.component';
+import {Stock} from './model/stock';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
-
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  it('should have stock instantiated on ngInit', () => {
+    const appComponent = new AppComponent();
+    expect(appComponent.stockObj).toBeUndefined();
+    appComponent.ngOnInit();
+    expect(appComponent.stockObj).toEqual(
+      new Stock('Test Set Test - ' , 'TST', 455, 45)
+    );
   });
 
-  it(`should have as title 'stockMarket'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('stockMarket');
+  it('should have toggle stock function', () => {
+    const appComponent = new AppComponent();
+    appComponent.ngOnInit();
+    expect(appComponent.stockObj.favorite).toBeFalsy();
+    appComponent.onToggleFavorite(new Stock('Test', 'TEST', 54, 55));
+    expect(appComponent.stockObj.favorite).toBeTruthy();
+    appComponent.onToggleFavorite(new Stock('Test', 'TEST', 54, 55));
+    expect(appComponent.stockObj.favorite).toBeFalsy();
   });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('stockMarket app is running!');
-  });
-});
+} );
