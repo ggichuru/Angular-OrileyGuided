@@ -11,6 +11,7 @@ import {
   AfterContentInit} from '@angular/core';
 import {Stock} from './model/stock';
 
+// tslint:disable-next-line:no-conflicting-lifecycle
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
